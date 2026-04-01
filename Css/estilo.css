@@ -1,5 +1,75 @@
-*{
-background:#3d3839 ;
-color: aliceblue;
+/*background es el fondo del diseño, color es el color que va a tener la fuente*/
 
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+background:#EDE5E4;
+max-width: 1080px;
+margin: 10px;
+}
+
+header{
+border:6px solid black;
+margin-bottom: 5px;
+border-radius: 10px;/*border-radius redondea los bordes.*/
+
+}
+.titulo{
+    text-align: center;
+}
+
+.seccion1{
+border: red 5px solid;
+height:220px ;/*height es el alto de la caja.*/
+width:50% ;/*width es el ancho de la caja.*/
+
+}
+
+.seccion2{
+border: 5px green solid;
+}
+/*font-family: es la familia de la fuente.
+font-size:tamano de la fuente.
+font-weigth:ancho de la fuente. 
+font-style: estilo de la fuente.
+text-align:modificamos la ubicacion del texto. center,rigth,left.
+
+
+*/
+
+.articulo {
+font-family: Arial, Helvetica, sans-serif;
+
+padding:15px ;
+width: 50%;
+margin: 15px;
+margin-left:55px;
+
+
+
+}
+/*text decoration: agrega o saca subrayado. se usa mucho al armar el menu.
+list-style-type: estilo de las vinetas.*/
+.menu {
+list-style-type: decimal;
+list-style-position: inside;
+
+}
+.menu li a {
+    text-decoration: none;
+
+    
+}
+
+.lista1{
+    list-style-type: lower-alpha;
+    margin: 20px;
+}
+
+footer{
+    border:solid 5px blueviolet;
+    height: 50px;
+    margin-top: 10px;
 }
