@@ -1,0 +1,36 @@
+body{
+   padding: 0; 
+   margin: 0;
+   
+
+}
+
+/* block: que ocupan todo el ancho del diseno. Generan salto de linea.se pueda dar ancho y alto sin problemas. EJ: div,section,header,h,p,form.
+
+en linea: su ancho y alto depende del contenido. No generan salto de linea. No aceptan ancho y alto como propiedades. Solo acepta margin y padding de los laterales. Ej: enlace, span,img.
+
+inline-block: es un hibrido entre los 2. Se comporta como in-line pero permite alto,ancho,padding y margin.
+
+none: el elemento no se muestra. no ocupa lugar. Oculta elementos.
+
+*/
+
+.caja1,.caja2{
+    border:3px solid black;
+    height: 80px;
+    width: 40%;
+    display: inline-block;
+}
+.caja1{
+    width: 90%;
+}
+
+.caja2{
+    display: none;
+}
+
+span{
+    border: 5px solid red;
+    display: block;
+}
+

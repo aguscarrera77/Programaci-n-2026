@@ -1,4 +1,16 @@
 /*background es el fondo del diseño, color es el color que va a tener la fuente*/
+/*pixeles: unidad de medida fija no es flexible. bordes lineas fijas,padding pero con cuidado.
+fallan en el responsive.
+em: unidad de medida flexible.1em: 16px. es escalable y se adapta al tamano del texto. botones, inputs.
+rem: unidad flexible y depende del tamano del texto.
+porcentaje: unidad de medida que toma el tamano del elemento padre.
+*/
+
+/* box-sizing: controla la sumatoria del alto y ancho de las cajas.
+2 valores:content-box y border-box.
+border-box: controla la sumatoria de cada uno de los elementos de la caja para que no se exceda de un limite.
+*/
+
 
 *{
     margin: 0;
@@ -60,7 +72,6 @@ list-style-position: inside;
 .menu li a {
     text-decoration: none;
 
-    
 }
 
 .lista1{
@@ -72,4 +83,14 @@ footer{
     border:solid 5px blueviolet;
     height: 50px;
     margin-top: 10px;
+}
+
+header,footer,.seccion2{
+ width: 98%;
+
+}
+
+.lista1 > li {
+    color:red;
+    font-weight: 800;
 }
