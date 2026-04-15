@@ -15,13 +15,18 @@ Para que se usa Menu flotante boton flotante.
 */
 
 .cabeza{
-position:fixed;
+
 background-color:rgb(198, 18, 141);
 width: 98%;
 height: 180px;
 top: 0;
 
 
+}
+.titulo{
+    position: sticky;
+    background-color: blanchedalmond;
+    top:0px;
 }
 .caja{
 
@@ -51,7 +56,7 @@ background-color: grey;
 .hijo{
    position:absolute;
    right: 50%;
-   top:0;
+   bottom:0;
     background-color: red;
 }
 .hijo1{
@@ -74,6 +79,6 @@ color:antiquewhite;
 .boton{
 position:fixed;
 bottom: 20px;
-right: 20px;
+right: 10px;
 
 }
