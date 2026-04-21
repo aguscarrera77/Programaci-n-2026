@@ -1,0 +1,19 @@
+/* animaciones en css son movimientos controlados de las cajas a las que les aplico la propiedad.
+transform transformar visualmente una caja de manera transitoria.
+transition: cambio controlado de estado de las cajas.
+animation: movimiento automatico de las cajas.
+*/
+
+.caja{
+width: 120px;
+height: 140px;
+background-color: coral;
+text-align: center;
+line-height: 120px;
+
+}
+
+.caja2{
+transform:translateX(60px) scale(1.2) rotate(10deg);
+
+}
