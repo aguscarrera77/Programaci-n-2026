@@ -88,18 +88,194 @@ transition: transform 0.8s ease;
 }
 
 img:hover{
-    transform: scale(1.8);
+    transform: scale(1.5);
 }
 
 .caja3{
 width:160px ;
 height: 120px;
-background: rgb(100, 24, 24);
+background: black;
 transition: transform 3s ease-in-out;
 color: antiquewhite;
+animation:colorido 5s infinite;
 
 }
 
 .caja3:hover{
     transform: rotate(-360deg);
+}
+
+/* keyframes: son modulos de css para animaciones y me permite controlar la animacion de principio a fin.
+inicio medio final.
+@keyframes nombre { inicio  medio y final }
+y la llamo con
+animation-name: nombre de la keyframes
+*/
+/*
+@keyframes mover {
+    from{
+        transform:translateX(0);
+     animation-delay: 1s;
+       animation-duration: 2s;
+        animation-iteration-count:3;
+        animation-direction: reverse alternate;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode:forwards;se queda al final. ;que hace la caja al final del movimiento.
+
+    }
+
+    to{
+        transform:translateX(300px)
+    }
+
+
+
+}
+
+@keyframes mover{
+    0%{
+        propiedad: valores;
+    }
+    25%{
+        propiedad: valores;
+    }
+
+    50%{
+        propiedad:valores;
+    }
+    75%{
+      propiedad: valores  }
+    
+    100%{
+        propiedad:valores;
+    }
+    
+}
+
+*/
+
+.navbar{
+    background-color: black;
+    color:antiquewhite;
+    padding:20px;
+    animation: bajar 1s forwards;
+
+}
+
+@keyframes bajar{
+    from{
+        transform:translateY(-100%);
+    }
+    to{
+        transform:translateY(0);
+    }
+
+}
+
+.card{
+    width: 200px;
+    height: 100px;
+    background-color: grey;
+    opacity: 0;
+
+    animation: aparecer 4s forwards;
+}
+.btn1{
+    padding:15px 25px;
+    animation: latir 2s infinite;
+}
+
+.pelota{
+    margin-top: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: orangered;
+    animation: rebotin 1s infinite;
+}
+
+@keyframes rebotin{
+    0%{
+        transform:translateY(0)
+    }
+    25%{
+        transform: translateY(-100px);
+    }
+    50%{
+        transform:translateY(0)
+    }
+    75%{
+        transform: translateY(-25px);
+    }
+    100%{
+        transform:translateY(0);
+        box-shadow: 0 10px 2px 0 black;
+        
+    }
+
+
+
+
+
+}
+
+@keyframes latir{
+    0%{
+        transform:scale(1) ;
+    }
+    25%{
+        trasnform:scale(1.25)
+    }
+    50%{
+        trasnform:scale(1.5)
+    }
+    75%{
+        transform:scale(1.25)
+    }
+    100%{
+        transform:scale(1)
+    }
+}
+
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.titulo{
+    animation: entrada 1s forwards;
+}
+
+@keyframes entrada {
+    from{
+        opacity: 0;
+        transform:translateX(-100px);
+    }
+    to{
+     opacity: 1;
+     transform:translateX(0);
+    }
+}
+
+@keyframes colorido{
+    0%{
+        background: red;
+    }
+    25%{
+        background: blue;
+    }
+    50%{
+        background: greenyellow;
+    }
+    75%{
+        background:orange;
+    }
+    100%{
+        background: violet;
+    }
 }
