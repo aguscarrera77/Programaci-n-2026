@@ -55,3 +55,84 @@ let cinturonabrochado= false;
 if(!cinturonabrochado){
     console.log('BEEP BEEP BEEP BEEP')
 }
+
+/*Validacion de formulario
+input Nombre.
+1 condicion es que el input no este vacio.
+2 String cada de caracteres.
+
+la logica del problema: marcar que un input esta vacio en una variable es "". dentro del input nombre existe cualquier caracter que sea diferente a "".
+*/
+
+let inputNombre="      ";
+
+if (inputNombre !==''){
+    console.log('Nombre de usuario fue cargado.')
+
+}
+else{console.log("Debe llenar el casillero de Nombre.")}
+
+ /* Pedido  de turnos sabiendo que el domingo esta cerrado.
+
+ if(dia==domingo){
+    console.log("Cerrado.")
+ }
+ else{console.log("Pedir turno de lunes a sabado.")}
+
+ if(dia!==domingo){
+    console.log("PEDIR TURNO.")
+ }
+else{console.log('DOMINGO CERRADO.')}*/
+
+/*Ciclo for: bucle que me permite repetir codigo es de manera programada por se la cantidad de vueltas que se repite.
+for(iniciador;condicion;contador){bloque de codigo que se repite.}
+iniciador: inicia el bucle determina la primera vuelta. En general es 0 o 1.
+condicion: ejecuta el bucle siempre y cuando sea TRUE. Si es true el bucle da una vuelta mas.
+contador: se ejecuta al terminar la condicion, y suma la cantidad de unidades determinadas para que sigue dando la vuelta.
+*/
+
+for(let i=0;i<=3;i++){
+    console.log("Vuelta numero "+ i)
+}
+
+
+/* Cuenta regresiva de un lanzamiento de un cohete*/
+
+for(let i=10;i>=0;i--){
+    console.log("Lanzamiento en: "+ i);
+}
+
+/*ALARMA SUENE 3 VECES*/
+
+let alarmaEncendida=true;
+
+for(let intento=1;intento<=3;intento++){
+    console.log('bip bip Alarma sonando.'+ intento +" veces")
+}
+console.log('Usuario no se desperto.')
+
+
+/* IF DENTRO DE UN FOR
+SIMULADOR DE ASCENSOR: HOTEL 6 PISOS.EL HOTEL TIENE PROBLEMAS DE AIRE ACONDICIONADO EN EL PISO 4. POR LO TANTO EL ASCENSOR NO PARA EN EL CUARTO PISO.*/
+
+for(let piso=0; piso<=6;piso++){
+    if(piso !==4){
+    
+        console.log('Ascensor subiendo... bienvenido al piso: '+ piso)
+    
+    }else{console.log('Piso 4 Inhabilitado')}
+
+
+}
+
+
+/* Sistema operativo del telefono y llego a la configuracion de la pantalla de la bateria. Simular descargar de la bateria desde 25% al 15%. Pero con una regla cuando llego a 20% salte el MODO AHORRO.
+*/
+
+for(let porcentaje=25;porcentaje>=15;porcentaje--){
+    console.log('Bateria actual: '+ porcentaje + "%")
+    if(porcentaje!==20){
+        console.log('Bateria baja.')
+    }else{console.log('MODO AHORRO ACTIVADO.')}
+
+}
