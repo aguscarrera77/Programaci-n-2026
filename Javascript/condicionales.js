@@ -136,3 +136,24 @@ for(let porcentaje=25;porcentaje>=15;porcentaje--){
     }else{console.log('MODO AHORRO ACTIVADO.')}
 
 }
+
+/*Tenemos que programar el radar de velocidad de la patrulla. Limite de velocidad a la entrada de la ciudad es de 80 km/h.
+Para probarlo vamos a simular el paso de varios autos a diferente velocidad desde 60 km/h a 100 km/h subiendo de 10 en 10.
+1- si va a menos de 80km/h le deseamos una bienvenida.
+2- si va entre 81 menos de 100 km/h advertencia.
+3-si va a 100km/h o mas fotomulta.*/
+
+/* midiendo la velocidad de cada uno el registro tira 60,70,80,90 y 101*/
+
+/* Forma negativa: que pasa si el auto NO VA A VELOCIDAD NORMAL.*/
+
+for(let velocidad=60;velocidad<=100;velocidad +=10){
+console.log("Auto detectado a: " ,velocidad,"km/h")
+/* la velocidad no es mayor 80.*/
+    if(!(velocidad<=80)){
+        if(velocidad>=100){
+        console.log("FOTOMULTA.")
+        }else{console.log('ADVERTENCIA.SUPERO EL LIMITE PERMITIDO.')}
+    }
+    else{console.log('Bienvenido a Pergamino.')}
+}
