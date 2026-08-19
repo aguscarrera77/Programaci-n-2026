@@ -89,3 +89,5 @@ return total;
 }
 
 console.log(`Total a pagar $${calcularTotal(compras)}`)
+
+console.log(calcularTotal(compras))
