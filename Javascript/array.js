@@ -91,3 +91,47 @@ return total;
 console.log(`Total a pagar $${calcularTotal(compras)}`)
 
 console.log(calcularTotal(compras))
+
+
+//obtener a traves de una funcion el precio mas bajo que hay en un listado.
+
+
+function obtenerPrecioBarato(precios){
+if(precios.length===0){
+    return "La lista de vacia.";
+}
+//voy armar una variable que sea el contador del listado de preci0 mas baratos.
+
+let precioMinino=precios[0];
+
+for(let i=1;i<precios.length;i++){
+    if(precios[i]<precioMinino){
+        precioMinino=precios[i];//Actualizar mientras if sea true.
+    }
+
+}
+
+return precioMinino
+}
+
+const listadoPrecios=[1200,850,450,990,510,210];
+
+console.log(obtenerPrecioBarato(listadoPrecios))
+
+
+//mostrar el historial de manera correcta...bucle for invertido.
+// for indice 0 1 2 (3 elementos) el for invertido es (2 1 0)
+
+function mostrarHistorial(historial){
+    console.log("---------HISTORIAL-------");
+    for(let i=historial.length - 1;i>=0;i--){
+        console.log(`Paso ${i + 1}: ${historial[i]}`)
+    }
+
+
+    
+}
+
+const acciones=["Inicio Sesion.","Pagina1","Carrito de Compras"]
+
+mostrarHistorial(acciones)
