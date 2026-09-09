@@ -7,22 +7,52 @@
     <link rel="stylesheet" href="Css/menu-hamburguesa.css">
 </head>
 <body>
-    <button class="menu-hamburguesa",id="menu-hamburguesa" aria-label="Abrir Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
+    
     <nav class="nav-menu" id="nav-menu">
 <ul>
     <li><a href="">Inicio</a></li>
-    <li><a href="">Productos</a></li>
+    <li id="submenu-Item"><a href="" id="submenu-trigger">Productos</a>
+    <ul class="submenu" id="submenu">
+        <li><a href="">Producto1</a></li>
+        <li><a href="">Producto2</a></li>
+        <li><a href="">Producto3</a></li>
+    </ul>
+    </li>
     <li><a href="">Contactos</a></li>
 </ul>
 
 
     </nav>
+
+    <button class="hamburguesa" id="btn-hamburguesa" aria-label="Menu">
+        <span class="linea"></span>
+        <span class="linea"></span>
+        <span class="linea"></span>
+
+
+    </button>
+    <nav class="navMovil" id="navMovil">
+        <ul class="lista-movil">
+                <li><a href="">Inicio</a></li>
+                <li id="submenu-Movil"><a href="" id="btn-submenuMovil">Productos</a>
+                <ul class="submenu2" id="submenu2">
+                    <li><a href="">Celulares</a></li>
+                    <li><a href="">Notebooks</a></li>
+                </ul></li>
+                <li><a href="">Contactos</a></li>
+                <li><a href="">Carrito</a></li>
+
+        </ul>
+
+
+
+
+    </nav>
+
+
+
+
+
 
     <script src="Javascript/menuHamburguesa.js"></script>
 </body>
