@@ -38,6 +38,7 @@ body{
     display:flex;
     flex-direction: column;
     justify-content: space-around;
+    position:relative;
     
 }
 .linea{
@@ -53,6 +54,10 @@ body{
     border-radius: 10px;
     padding: 15px;
     margin-top: 10px;
+    opacity: 1;
+    visibility: hidden;
+    transform:translateY(-12px) scale(0.95);
+    
 }
 .lista-movil{
     list-style: none;
@@ -64,7 +69,13 @@ body{
     color: #333333;
     text-decoration: none;
     border-radius: 5px;
+    display: block;
 
+
+}
+
+.lista-movil a:hover{
+    background-color: #ffffff;
 }
 
 .submenu2{
@@ -72,4 +83,52 @@ display: none;
 list-style: none;
 padding-left: 15px;
 margin: 0;
+
+
+}
+
+.navMovil.abierto{
+    opacity:1;
+    visibility: visible;
+    transform:translateY(0) scale(1);
+}
+
+.submenu2.activo{
+    opacity:1;
+    max-width: 200px;
+}
+
+/*-------------------- CONTENEDOR PRODUCTOS-------*/
+h1{
+    text-align: center;
+}
+form{
+    display: flex;
+    padding: 16px;
+    margin:18px;
+    background-color: blanchedalmond;
+    gap:12px;
+    
+}
+
+input,button{
+font-size: 16px;
+padding: 12px;
+
+}
+button{
+    background-color: #28a745;
+    color:whitesmoke;
+    border:none;
+    border-radius: 8px;
+}
+
+button:hover{
+    background-color:#218838 ;
+}
+
+.contenedor-productos{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
 }
