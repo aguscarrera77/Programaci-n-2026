@@ -20,7 +20,7 @@ const submenuMovil=document.querySelector('#btn-submenuMovil');
 // entre al dom y llame a todos las etiquetas que contiene el boton, menu y submenu.
 
 botonHamburguesa.addEventListener("click",function(){
-navMovil.classList.toogle('abierto');
+navMovil.classList.toggle('abierto');
 });
 //doble para cerrar el boton. Cierra todo.
 botonHamburguesa.addEventListener('dblclick',function(){
@@ -33,7 +33,7 @@ submenu2.classList.remove('activo');
 
 submenuMovil.addEventListener('click',function(event){
     event.preventDefault();
-    submenu2.classList.toogle('activo');
+    submenu2.classList.toggle('activo');
 
 })
   //-------------- Agregar productos haciendo click en el boton

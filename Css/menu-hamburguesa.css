@@ -94,8 +94,7 @@ margin: 0;
 }
 
 .submenu2.activo{
-    opacity:1;
-    max-width: 200px;
+    display: block;
 }
 
 /*-------------------- CONTENEDOR PRODUCTOS-------*/
