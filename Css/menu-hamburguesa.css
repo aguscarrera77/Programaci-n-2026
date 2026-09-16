@@ -131,3 +131,21 @@ button:hover{
     flex-direction: column;
     gap:12px;
 }
+.tarjeta-producto{
+    background-color: #f8f9fa;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding:12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.btn-eliminar{
+    background-color: rgb(51, 51, 235);
+    padding: 8px 10px;
+    color:#f4f4f4;
+}
+
