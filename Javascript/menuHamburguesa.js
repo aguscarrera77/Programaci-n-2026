@@ -104,6 +104,7 @@ function agregarProductoalDom(producto){
      const btnEliminar=tarjeta.querySelector(".btn-eliminar");
      btnEliminar.addEventListener('click',function(){
         tarjeta.remove();
+        productos=productos.filter()
 
      });
     
