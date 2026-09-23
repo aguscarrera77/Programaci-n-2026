@@ -57,7 +57,7 @@ submenuMovil.addEventListener('click',function(event){
       const datosGuardados=localStorage.getItem("productos");
     if(datosGuardados){
       productos=JSON.parse(datosGuardados)//JSON.parse transforma cadena de texto a array de objetos.
-      productos.array.forEach(producto=>agregarProductoalDom(producto));
+      productos.forEach(producto=>agregarProductoalDom(producto));
     }
 
 
@@ -104,7 +104,9 @@ function agregarProductoalDom(producto){
      const btnEliminar=tarjeta.querySelector(".btn-eliminar");
      btnEliminar.addEventListener('click',function(){
         tarjeta.remove();
-        productos=productos.filter()
+        productos=productos.filter(p=> p.id !== producto.id);
+        cargarLocalStorage();
+        
 
      });
     
