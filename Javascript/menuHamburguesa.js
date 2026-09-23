@@ -45,6 +45,23 @@ submenuMovil.addEventListener('click',function(event){
   const listaProducto=document.querySelector("#listaProducto");
 
   const productos=[];
+  //funcion para guardar el array transformado en una cadena de caracteres.
+//setItem: guarda/actualiza("nombre de la clave","valor en texto")
+  function guardarLocalStorage(){
+    localStorage.setItem('productos',JSON.stringify(productos));
+  }
+
+  //funcion para cargar los productos guardados.getItem lee y obtiene datos guardados.Recupera datos que hayamos guardado.leer si existe alguna clave.
+
+  function cargarLocalStorage(){
+      const datosGuardados=localStorage.getItem("productos");
+    if(datosGuardados){
+      productos=JSON.parse(datosGuardados)//JSON.parse transforma cadena de texto a array de objetos.
+      productos.array.forEach(producto=>agregarProductoalDom(producto));
+    }
+
+
+  };
 
   formProducto.addEventListener('submit',function(e){
     e.preventDefault();//evita reset de los inputs.
@@ -58,17 +75,19 @@ submenuMovil.addEventListener('click',function(event){
 
     };
     productos.push(nuevoproducto);// agrega al array productos un objeto.
-
+    
     agregarProductoalDom(nuevoproducto);//funcion que va a agragar el nuevo producto en el html receptor.
+    guardarLocalStorage();
+    
     formProducto.reset();//resetea los inputs.
     nombreProducto.focus();//vuelve el cursor al input senalado.
+    
 
   });
 
-  function guardarLocalStorage(){
-    localStorage.setItem('productos'.JSON.stringify(productos));
-  }
+  //funcion para cargar los productos guardados.getItem lee y obtiene datos guardados.Recupera datos que hayamos guardado.leer si existe alguna clave.
 
+  
 function agregarProductoalDom(producto){
     const tarjeta=document.createElement("div");
     tarjeta.classList.add("tarjeta-producto");
@@ -85,6 +104,7 @@ function agregarProductoalDom(producto){
      const btnEliminar=tarjeta.querySelector(".btn-eliminar");
      btnEliminar.addEventListener('click',function(){
         tarjeta.remove();
+
      });
     
     listaProducto.appendChild(tarjeta);
