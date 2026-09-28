@@ -44,7 +44,7 @@ submenuMovil.addEventListener('click',function(event){
   const precioProducto=document.querySelector("#precioProducto");
   const listaProducto=document.querySelector("#listaProducto");
 
-  const productos=[];
+  let  productos=[];
   //funcion para guardar el array transformado en una cadena de caracteres.
 //setItem: guarda/actualiza("nombre de la clave","valor en texto")
   function guardarLocalStorage(){
@@ -105,10 +105,12 @@ function agregarProductoalDom(producto){
      btnEliminar.addEventListener('click',function(){
         tarjeta.remove();
         productos=productos.filter(p=> p.id !== producto.id);
-        cargarLocalStorage();
+        guardarLocalStorage();
         
 
      });
     
     listaProducto.appendChild(tarjeta);
-  };
+  }
+
+  cargarLocalStorage();
