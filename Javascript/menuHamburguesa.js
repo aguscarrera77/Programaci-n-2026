@@ -38,79 +38,35 @@ submenuMovil.addEventListener('click',function(event){
 })
   //-------------- Agregar productos haciendo click en el boton
 
-  const formProducto=document.querySelector('#formProducto');
+  const formProducto=document.querySelector("#formProducto");
 
-  const nombreProducto=document.querySelector("#nombreProducto");
-  const precioProducto=document.querySelector("#precioProducto");
-  const listaProducto=document.querySelector("#listaProducto");
+  formProducto.addEventListener("submit",function(e){
+    e.preventDefault();
+    const nombreProducto=document.querySelector("#nombreProducto");
+    const precioProducto=document.querySelector("#precioProducto");
 
-  let  productos=[];
-  //funcion para guardar el array transformado en una cadena de caracteres.
-//setItem: guarda/actualiza("nombre de la clave","valor en texto")
-  function guardarLocalStorage(){
-    localStorage.setItem('productos',JSON.stringify(productos));
-  }
+    const nombre=nombreProducto.value;
+    const precio=parseFloat(precioProducto.value);
 
-  //funcion para cargar los productos guardados.getItem lee y obtiene datos guardados.Recupera datos que hayamos guardado.leer si existe alguna clave.
+    let productos=JSON.parse(localStorage.getItem("productos")) || [];
 
-  function cargarLocalStorage(){
-      const datosGuardados=localStorage.getItem("productos");
-    if(datosGuardados){
-      productos=JSON.parse(datosGuardados)//JSON.parse transforma cadena de texto a array de objetos.
-      productos.forEach(producto=>agregarProductoalDom(producto));
+    const nuevoProducto={
+      id:Date.now(),
+      nombre:nombre,
+      precio:precio
     }
+    productos.push(nuevoProducto);
+    localStorage.setItem("productos",JSON.stringify(productos));
+    Swal.fire({
+  title: "excelente!",
+  text: "agrego un producto a lista correctamente!",
+  icon: "success"
+});
+    formProducto.reset();
+    nombreProducto.focus();
+
+  })
 
 
-  };
-
-  formProducto.addEventListener('submit',function(e){
-    e.preventDefault();//evita reset de los inputs.
-    const nombre=nombreProducto.value.trim();//guarda valor del input nombre y saca espacios adelante y atras.
-    const precio=parseFloat(precioProducto.value);//parsefloat toma valores decimales.
-    if(nombre==="" || isNaN(precio))return;//validicion con condicion:si el nombre esta vacio o precio no es un numero la funcion no sigue se interrumpe y vuelve a punto cero por el return.
-    const nuevoproducto={
-        id:Date.now(),// generar un id de acuerdo la fecha.
-        nombre:nombre,
-        precio:precio
-
-    };
-    productos.push(nuevoproducto);// agrega al array productos un objeto.
-    
-    agregarProductoalDom(nuevoproducto);//funcion que va a agragar el nuevo producto en el html receptor.
-    guardarLocalStorage();
-    
-    formProducto.reset();//resetea los inputs.
-    nombreProducto.focus();//vuelve el cursor al input senalado.
-    
-
-  });
-
-  //funcion para cargar los productos guardados.getItem lee y obtiene datos guardados.Recupera datos que hayamos guardado.leer si existe alguna clave.
 
   
-function agregarProductoalDom(producto){
-    const tarjeta=document.createElement("div");
-    tarjeta.classList.add("tarjeta-producto");
-    tarjeta.dataset.id=producto.id;
-    //creo la tarjeta para el html
-    tarjeta.innerHTML=`
-        <div><strong>
-            ${producto.nombre}
-        </strong>
-        -$${producto.precio.toFixed(2)}
-        </div>
-        <button class="btn-eliminar">Eliminar</button>
-        `;
-     const btnEliminar=tarjeta.querySelector(".btn-eliminar");
-     btnEliminar.addEventListener('click',function(){
-        tarjeta.remove();
-        productos=productos.filter(p=> p.id !== producto.id);
-        guardarLocalStorage();
-        
-
-     });
-    
-    listaProducto.appendChild(tarjeta);
-  }
-
-  cargarLocalStorage();
